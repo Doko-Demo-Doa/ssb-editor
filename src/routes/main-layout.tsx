@@ -5,7 +5,5 @@ interface Props {
 }
 
 export const MainLayout: React.FC<Props> = ({ children }) => {
-  return (
-    <div className="main-layout w-full h-full bg-yellow-100">{children}</div>
-  );
+  return <div className="main-layout w-full h-full">{children}</div>;
 };
