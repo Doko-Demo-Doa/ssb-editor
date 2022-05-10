@@ -3,7 +3,7 @@ import { MainLayout } from "../main-layout";
 
 export const MainEditorRoute = () => {
   function injoker() {
-    invoke("plugin:launch|print_log");
+    invoke("plugin:launch|launch_exec");
   }
 
   return (

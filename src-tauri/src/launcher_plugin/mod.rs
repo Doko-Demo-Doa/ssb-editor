@@ -1,4 +1,5 @@
-use notify_rust::Notification;
+use notify_rust::*;
+
 /**
  * Launch specific program.
  */
@@ -10,9 +11,11 @@ use tauri::{
 #[tauri::command]
 fn launch_exec() {
     println!("Launching...");
+
     Notification::new()
-        .summary("Launching News")
-        .body("Launching completed")
+        .summary("Firefox News")
+        .body("This will almost look like a real firefox notification.")
+        .icon("firefox")
         .show();
 }
 
