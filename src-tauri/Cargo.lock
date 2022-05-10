@@ -62,7 +62,6 @@ dependencies = [
  "serde_json",
  "tauri",
  "tauri-build",
- "winrt-notification",
 ]
 
 [[package]]
