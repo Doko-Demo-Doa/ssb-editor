@@ -1,8 +1,8 @@
 [package]
 name = "app"
 version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+description = "SSB Editor"
+authors = ["Doko"]
 license = ""
 repository = ""
 default-run = "app"
@@ -12,12 +12,13 @@ rust-version = "1.57"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
-tauri-build = { version = "1.0.0-rc.6", features = [] }
+tauri-build = { version = "1.0.0-rc.8", features = [] }
 
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.0.0-rc.7", features = ["api-all"] }
+tauri = { version = "1.0.0-rc.9", features = ["api-all"] }
+notify-rust = "4"
 
 [features]
 # by default Tauri runs in production mode
@@ -26,3 +27,6 @@ default = [ "custom-protocol" ]
 # this feature is used used for production builds where `devPath` points to the filesystem
 # DO NOT remove this
 custom-protocol = [ "tauri/custom-protocol" ]
+
+[profile.release]
+codegen-units = 1
