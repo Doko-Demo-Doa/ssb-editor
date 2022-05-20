@@ -1,6 +1,8 @@
 import { invoke } from "@tauri-apps/api";
 import { ContentInput } from "../../components/content-input/content-input";
 import { ContentToolbar } from "../../components/content-toolbar/content-toolbar";
+import { StatusBar } from "../../components/status-bar/status-bar";
+import { SubLines } from "../../components/sub-lines/sub-lines";
 import { VideoFrame } from "../../components/video-frame/video-frame";
 import { MainLayout } from "../main-layout";
 
@@ -11,8 +13,8 @@ export const MainEditorRoute = () => {
 
   return (
     <MainLayout>
-      <div className="main-editor-route w-full">
-        <div className="inline-flex w-full h-full">
+      <div className="main-editor-route w-full h-full flex flex-col">
+        <div className="inline-flex w-full h-96">
           <div className="h-96 aspect-[16/9] bg-slate-400">
             <VideoFrame />
           </div>
@@ -22,8 +24,12 @@ export const MainEditorRoute = () => {
           </div>
         </div>
 
-        <div className="w-full bg-red-300 columns-1" onClick={() => injoker()}>
-          Click
+        <div
+          className="bottom-area w-full flex flex-col h-[calc(100vh_-_24em)]"
+          onClick={() => injoker()}
+        >
+          <SubLines />
+          <StatusBar />
         </div>
       </div>
     </MainLayout>
