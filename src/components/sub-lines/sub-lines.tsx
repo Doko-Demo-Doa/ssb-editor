@@ -1,4 +1,5 @@
-import React from "react";
+import clsx from "clsx";
+import React, { useState } from "react";
 
 interface Props {}
 
@@ -27,10 +28,20 @@ const dummyLines = [
 ];
 
 export const SubLines: React.FC<Props> = () => {
+  const [selected, setSelected] = useState(-1);
+
   return (
     <div className="overflow-y-auto">
       {dummyLines.map((n, idx) => (
-        <div className={idx % 2 === 1 ? "bg-slate-500" : "bg-green-200"}>
+        <div
+          key={idx}
+          onClick={() => setSelected(idx)}
+          className={clsx(
+            idx % 2 === 1 ? "bg-slate-100" : "bg-white",
+            selected === idx ? "bg-green-200" : "",
+            "text-slate-700 h-8 flex items-center px-6"
+          )}
+        >
           {n}
         </div>
       ))}

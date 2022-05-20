@@ -4,7 +4,7 @@ import { BeakerIcon } from "@heroicons/react/solid";
 export const ContentToolbar = () => {
   return (
     <div className="flex flex-col ">
-      <div className="inline-flex items-center gap-1 p-1">
+      <div className="inline-flex items-center gap-3 p-1">
         <div className="form-control">
           <label className="label cursor-pointer gap-2">
             <span className="label-text">Comment</span>
@@ -14,13 +14,10 @@ export const ContentToolbar = () => {
 
         <select className="select select-bordered select-sm w-full max-w-xs">
           <option disabled selected>
-            Pick one
+            Choose style
           </option>
-          <option>Star Wars</option>
-          <option>Harry Potter</option>
-          <option>Lord of the Rings</option>
-          <option>Planet of the Apes</option>
-          <option>Star Trek</option>
+          <option>TL-sign</option>
+          <option>Dialog-alt</option>
         </select>
 
         <input

@@ -15,6 +15,7 @@
     "@heroicons/react": "1.0.6",
     "@tailwindcss/typography": "0.5.2",
     "@tauri-apps/api": "1.0.0-rc.5",
+    "clsx": "1.1.1",
     "daisyui": "2.15.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
