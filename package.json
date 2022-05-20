@@ -7,7 +7,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
-    "tauri:dev": "tauri dev"
+    "tauri:dev": "tauri dev",
+    "create-plugin": "tauri plugin init --name launcher"
   },
   "dependencies": {
     "@tauri-apps/api": "1.0.0-rc.5",
