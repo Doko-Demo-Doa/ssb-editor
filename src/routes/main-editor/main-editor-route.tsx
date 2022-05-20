@@ -18,7 +18,7 @@ export const MainEditorRoute = () => {
           <div className="h-96 aspect-[16/9] bg-slate-400">
             <VideoFrame />
           </div>
-          <div className="h-64 w-full p-2">
+          <div className="h-96 w-full p-2 flex flex-col">
             <ContentToolbar />
             <ContentInput />
           </div>
