@@ -6,7 +6,7 @@ export const ContentInput: React.FC<Props> = () => {
   return (
     <textarea
       className="textarea textarea-primary w-full grow my-1"
-      placeholder="Bio"
+      placeholder="Enter content here..."
     />
   );
 };

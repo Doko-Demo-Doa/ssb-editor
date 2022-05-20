@@ -15,7 +15,7 @@ export const MainEditorRoute = () => {
     <MainLayout>
       <div className="main-editor-route w-full h-full flex flex-col">
         <div className="inline-flex w-full h-96">
-          <div className="h-96 aspect-[16/9] bg-slate-400">
+          <div className="h-96 aspect-[16/9]">
             <VideoFrame />
           </div>
           <div className="h-96 w-full p-2 flex flex-col">

@@ -31,7 +31,7 @@ export const SubLines: React.FC<Props> = () => {
   const [selected, setSelected] = useState(-1);
 
   return (
-    <div className="overflow-y-auto">
+    <div className="overflow-y-auto select-none">
       {dummyLines.map((n, idx) => (
         <div
           key={idx}
