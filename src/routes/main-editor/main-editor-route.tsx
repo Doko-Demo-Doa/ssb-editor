@@ -25,7 +25,7 @@ export const MainEditorRoute = () => {
         </div>
 
         <div
-          className="bottom-area w-full flex flex-col h-[calc(100vh_-_24em)]"
+          className="bottom-area w-full flex justify-between flex-col h-[calc(100vh_-_24em)]"
           onClick={() => injoker()}
         >
           <SubLines />
