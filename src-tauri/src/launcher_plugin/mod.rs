@@ -1,4 +1,4 @@
-use notify_rust::*;
+use std::process::Command;
 
 /**
  * Launch specific program.
@@ -12,11 +12,10 @@ use tauri::{
 fn launch_exec() {
     println!("Launching...");
 
-    Notification::new()
-        .summary("Firefox News")
-        .body("This will almost look like a real firefox notification.")
-        .icon("firefox")
-        .show();
+    let ouput = Command::new("open")
+        .arg("/Applications/Safari.app")
+        .spawn()
+        .expect("Cannot open program");
 }
 
 #[tauri::command]
