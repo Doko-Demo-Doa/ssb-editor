@@ -6,7 +6,9 @@ import {
   Stack,
   Textarea,
   ActionIcon,
+  Modal,
 } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import {
   IconBold,
   IconItalic,
@@ -18,6 +20,8 @@ import {
 import { MainLayout } from "../main-layout";
 
 export const MainEditorRoute = () => {
+  const [opened, handlers] = useDisclosure(false);
+
   return (
     <MainLayout>
       <Group grow>
@@ -57,12 +61,24 @@ export const MainEditorRoute = () => {
               <ActionIcon variant="filled">
                 <IconShadow size={16} />
               </ActionIcon>
-              <ActionIcon variant="filled" color="teal">
+              <ActionIcon
+                variant="filled"
+                color="teal"
+                onClick={() => handlers.open()}
+              >
                 <IconCheck size={16} />
               </ActionIcon>
             </Group>
 
             <ContentToolbar />
+
+            <Modal
+              opened={opened}
+              onClose={() => handlers.close()}
+              title="Introduce yourself!"
+            >
+              {/* Modal content */}
+            </Modal>
 
             <Textarea
               styles={(theme) => ({
