@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { dialog, window as appWindow } from "@tauri-apps/api";
 import { MantineProvider, Button } from "@mantine/core";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -9,14 +8,18 @@ import { MainEditorRoute } from "./routes/main-editor/main-editor-route";
 import "./app.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<MainEditorRoute />} />
-      </Routes>
-    </BrowserRouter>
+    <MantineProvider
+      withGlobalStyles
+      withNormalizeCSS
+      theme={{ colorScheme: "dark" }}
+    >
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<MainEditorRoute />} />
+        </Routes>
+      </BrowserRouter>
+    </MantineProvider>
   );
 }
 
