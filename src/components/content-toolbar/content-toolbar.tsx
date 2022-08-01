@@ -1,93 +1,41 @@
-import { IconTyping } from "../../types";
-import { CustomIcon } from "../icon/custom-icon";
-
-const toolbar1Icons: Array<{ iconName: IconTyping; tooltip?: string }> = [
-  {
-    iconName: "text-bold",
-    tooltip: "Make the selected text bold",
-  },
-  {
-    iconName: "text-italic",
-    tooltip: "Test 1",
-  },
-  {
-    iconName: "text-underline",
-    tooltip: "Test 2",
-  },
-  {
-    iconName: "text-color-primary",
-    tooltip: "Test 2",
-  },
-];
+import { Checkbox, Group, Select, Switch } from "@mantine/core";
 
 export const ContentToolbar = () => {
   return (
-    <div className="flex flex-col ">
-      <div className="inline-flex items-center gap-3 p-1">
-        <div className="form-control">
-          <label className="label cursor-pointer gap-2">
-            <span className="label-text">Comment</span>
-            <input type="checkbox" className="toggle" />
-          </label>
-        </div>
+    <Group
+      align="center"
+      position="left"
+      spacing={10}
+      noWrap
+      grow
+      sx={{ width: "100%" }}
+    >
+      <Select
+        placeholder="Font"
+        data={[
+          { value: "arial", label: "Arial" },
+          { value: "segoe-ui", label: "Segoe UI" },
+          { value: "uvn-nhannang", label: "UVN-NhanNang" },
+        ]}
+      />
 
-        <select className="select select-bordered select-sm w-full max-w-xs">
-          <option disabled selected>
-            Choose style
-          </option>
-          <option>TL-sign</option>
-          <option>Dialog-alt</option>
-        </select>
+      <Select
+        placeholder="Font"
+        transition="fade"
+        data={[
+          { value: "arial", label: "Arial" },
+          { value: "segoe-ui", label: "Angular" },
+          { value: "uvn-nhannang", label: "UVN-NhanNang" },
+        ]}
+      />
 
-        <input
-          type="text"
-          placeholder="Actor"
-          className="input input-bordered input-sm w-full max-w-xs"
-        />
-      </div>
+      <Switch size="lg" label="Use frame" color="teal" />
 
-      <div className="inline-flex items-center gap-1 p-1">
-        {toolbar1Icons.map((n, idx) => (
-          <div
-            key={idx}
-            className="tooltip tooltip-bottom"
-            data-tip={n.tooltip}
-          >
-            <button className="btn btn-outline btn-square btn-sm">
-              <CustomIcon
-                iconName={n.iconName}
-                className="text-white w-6 h-6"
-              />
-            </button>
-          </div>
-        ))}
-
-        <div className="divider-horizontal"></div>
-
-        <div className="form-control">
-          <label className="label cursor-pointer gap-3">
-            <span className="label-text">Time</span>
-            <input
-              type="radio"
-              name="radio-6"
-              className="radio checked:bg-red-500"
-              checked
-            />
-          </label>
-        </div>
-
-        <div className="form-control">
-          <label className="label cursor-pointer gap-3">
-            <span className="label-text">Frame</span>
-            <input
-              type="radio"
-              name="radio-6"
-              className="radio checked:bg-blue-500"
-              checked
-            />
-          </label>
-        </div>
-      </div>
-    </div>
+      <Checkbox
+        sx={{ userSelect: "none" }}
+        defaultChecked={false}
+        label="Show original"
+      />
+    </Group>
   );
 };

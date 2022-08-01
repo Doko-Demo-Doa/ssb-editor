@@ -1,5 +1,5 @@
 import React from "react";
-import { AppShell, Navbar, Header } from "@mantine/core";
+import { AppShell, Header } from "@mantine/core";
 
 interface Props {
   children?: React.ReactNode;
