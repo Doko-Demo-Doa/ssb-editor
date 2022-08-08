@@ -1,4 +1,6 @@
 import { ContentToolbar } from "@/components/content-toolbar/content-toolbar";
+import { SubLines } from "@/components/sub-lines/sub-lines";
+import { Waveform } from "@/components/waveform/waveform";
 import {
   AspectRatio,
   Group,
@@ -39,6 +41,7 @@ export const MainEditorRoute = () => {
 
         <AspectRatio ratio={16 / 10}>
           <Stack>
+            <Waveform />
             <Group
               align="self-start"
               position="left"
@@ -97,6 +100,8 @@ export const MainEditorRoute = () => {
           </Stack>
         </AspectRatio>
       </Group>
+
+      <SubLines />
     </MainLayout>
   );
 };
