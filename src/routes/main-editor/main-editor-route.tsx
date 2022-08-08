@@ -1,10 +1,10 @@
 import { ContentToolbar } from "@/components/content-toolbar/content-toolbar";
 import { SubLines } from "@/components/sub-lines/sub-lines";
+import { VideoFrame } from "@/components/video-frame/video-frame";
 import { Waveform } from "@/components/waveform/waveform";
 import {
   AspectRatio,
   Group,
-  Image,
   Stack,
   Textarea,
   ActionIcon,
@@ -19,7 +19,7 @@ import {
   IconShadow,
   IconCheck,
 } from "@tabler/icons";
-import { MainLayout } from "../main-layout";
+import { MainLayout } from "@/routes/main-layout";
 
 export const MainEditorRoute = () => {
   const [opened, handlers] = useDisclosure(false);
@@ -28,15 +28,7 @@ export const MainEditorRoute = () => {
     <MainLayout>
       <Group grow>
         <AspectRatio ratio={16 / 10}>
-          <Image
-            styles={(theme) => ({
-              root: {
-                backgroundColor: "blue",
-              },
-            })}
-            src="https://images.unsplash.com/photo-1527118732049-c88155f2107c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80"
-            alt="Panda"
-          />
+          <VideoFrame />
         </AspectRatio>
 
         <AspectRatio ratio={16 / 10}>

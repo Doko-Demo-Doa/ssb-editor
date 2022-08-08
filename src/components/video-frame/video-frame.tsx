@@ -5,7 +5,7 @@ import {
   PlayIcon,
   PauseIcon,
 } from "@heroicons/react/solid";
-import { CustomIcon } from "../icon/custom-icon";
+import { Box, Paper, Slider } from "@mantine/core";
 
 const CONTROLS = [
   {
@@ -21,34 +21,14 @@ const CONTROLS = [
 
 export const VideoFrame = () => {
   return (
-    <div className="flex flex-col h-full">
-      <div className="video-main grow h-full" />
-
-      <div className="px-2 pt-1">
-        <input
-          type="range"
-          min="0"
-          max="100"
-          className="range range-accent range-xs"
-        />
-      </div>
-
-      <div className="controls w-full p-1 gap-2 inline-flex justify-center">
-        <button className="btn btn-outline btn-square btn-sm">
-          <label className="swap swap-rotate">
-            <input type="checkbox" />
-
-            <CustomIcon
-              iconName="media-play"
-              className="swap-on fill-current w-6"
-            />
-            <CustomIcon
-              iconName="media-pause"
-              className="swap-off fill-current w-6"
-            />
-          </label>
-        </button>
-      </div>
-    </div>
+    <Paper>
+      <Slider
+        marks={[
+          { value: 20, label: "20%" },
+          { value: 50, label: "50%" },
+          { value: 80, label: "80%" },
+        ]}
+      />
+    </Paper>
   );
 };
