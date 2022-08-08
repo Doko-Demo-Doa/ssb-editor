@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, ScrollArea, Box } from "@mantine/core";
+import { Text, ScrollArea } from "@mantine/core";
 
 interface Props {}
 
@@ -25,13 +25,21 @@ const dummyLines = [
   "test",
   "test",
   "test",
+  "test",
+  "test 2",
+  "test",
+  "test",
+  "test",
+  "test",
+  "test",
+  "test last",
 ];
 
 export const SubLines: React.FC<Props> = () => {
   const [selected, setSelected] = useState(-1);
 
   return (
-    <ScrollArea.Autosize maxHeight={300} mx="auto" sx={(theme) => ({})}>
+    <ScrollArea>
       {dummyLines.map((n, idx) => (
         <Text
           key={idx}
@@ -44,6 +52,6 @@ export const SubLines: React.FC<Props> = () => {
           {n}
         </Text>
       ))}
-    </ScrollArea.Autosize>
+    </ScrollArea>
   );
 };
