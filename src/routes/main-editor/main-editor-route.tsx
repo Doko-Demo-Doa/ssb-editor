@@ -9,6 +9,7 @@ import {
   Textarea,
   ActionIcon,
   Modal,
+  Checkbox,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import {
@@ -34,13 +35,8 @@ export const MainEditorRoute = () => {
         <AspectRatio ratio={16 / 10}>
           <Stack>
             <Waveform />
-            <Group
-              align="self-start"
-              position="left"
-              spacing={10}
-              noWrap
-              sx={{ width: "100%" }}
-            >
+            <Group position="left" spacing="md" noWrap sx={{ width: "100%" }}>
+              <Checkbox label="Comment" />
               <ActionIcon variant="filled">
                 <IconBold size={16} />
               </ActionIcon>

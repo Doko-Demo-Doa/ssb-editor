@@ -5,5 +5,13 @@ interface Props extends ButtonProps {
 }
 
 export const CustomButton: React.FC<Props> = ({ uiStyleVariant, ...rest }) => {
-  return <Button {...rest}>CustomButton</Button>;
+  return (
+    <Button
+      variant="gradient"
+      gradient={{ from: "indigo", to: "cyan" }}
+      {...rest}
+    >
+      CustomButton
+    </Button>
+  );
 };

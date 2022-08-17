@@ -1,4 +1,13 @@
-import { Checkbox, Group, Select, Switch } from "@mantine/core";
+import {
+  Autocomplete,
+  Checkbox,
+  Group,
+  NumberInput,
+  SegmentedControl,
+  Select,
+  Switch,
+  Tooltip,
+} from "@mantine/core";
 
 export const ContentToolbar = () => {
   return (
@@ -11,6 +20,10 @@ export const ContentToolbar = () => {
         grow
         sx={{ width: "100%" }}
       >
+        <Tooltip label="Layer number">
+          <NumberInput defaultValue={0} precision={0} placeholder="Layer" />
+        </Tooltip>
+
         <Select
           placeholder="Font"
           data={[
@@ -20,17 +33,14 @@ export const ContentToolbar = () => {
           ]}
         />
 
-        <Select
-          placeholder="Font"
-          transition="fade"
+        <Autocomplete placeholder="Actor" data={["Grindfest", "Butler"]} />
+
+        <SegmentedControl
           data={[
-            { value: "arial", label: "Arial" },
-            { value: "segoe-ui", label: "Angular" },
-            { value: "uvn-nhannang", label: "UVN-NhanNang" },
+            { label: "Time", value: "time" },
+            { label: "Frame", value: "frame" },
           ]}
         />
-
-        <Switch size="lg" label="Use frame" color="teal" />
 
         <Checkbox
           sx={{ userSelect: "none" }}
