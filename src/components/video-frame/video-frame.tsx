@@ -21,8 +21,9 @@ const CONTROLS = [
 
 export const VideoFrame = () => {
   return (
-    <Paper>
+    <Paper sx={{ padding: "1rem" }}>
       <Slider
+        sx={{ width: "100%" }}
         marks={[
           { value: 20, label: "20%" },
           { value: 50, label: "50%" },

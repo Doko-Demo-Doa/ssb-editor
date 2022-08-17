@@ -1,5 +1,6 @@
 {
   "name": "ssb-editor",
+  "description": "Subtitle editor, powered with substation-beta and web technologies",
   "private": true,
   "version": "0.1.0",
   "scripts": {
