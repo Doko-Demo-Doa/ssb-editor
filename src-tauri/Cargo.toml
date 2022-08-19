@@ -30,3 +30,7 @@ custom-protocol = [ "tauri/custom-protocol" ]
 
 [profile.release]
 codegen-units = 1
+
+[members]
+members = ["menus"]
+

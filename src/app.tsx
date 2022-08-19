@@ -1,9 +1,12 @@
+import { lazy, Suspense } from "react";
 import { dialog, window as appWindow } from "@tauri-apps/api";
-import { MantineProvider, Button } from "@mantine/core";
+import { MantineProvider, Skeleton } from "@mantine/core";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { invoke } from "@tauri-apps/api/tauri";
 
-import { MainEditorRoute } from "./routes/main-editor/main-editor-route";
+import { MainEditorRoute } from "@/routes/main-editor/main-editor-route";
+
+const ModalRegistry = lazy(() => import("@/components/modals/modal-registry"));
 
 import "./app.css";
 
@@ -14,11 +17,15 @@ function App() {
       withNormalizeCSS
       theme={{ colorScheme: "dark" }}
     >
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<MainEditorRoute />} />
-        </Routes>
-      </BrowserRouter>
+      <Suspense fallback={<Skeleton />}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<MainEditorRoute />} />
+          </Routes>
+        </BrowserRouter>
+
+        <ModalRegistry />
+      </Suspense>
     </MantineProvider>
   );
 }
