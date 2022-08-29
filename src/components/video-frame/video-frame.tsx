@@ -1,13 +1,6 @@
 import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
-  PlayIcon,
-  PauseIcon,
-} from "@heroicons/react/solid";
-import {
   Box,
   Paper,
-  Container,
   Slider,
   Stack,
   Group,
@@ -15,20 +8,7 @@ import {
   Select,
   Space,
 } from "@mantine/core";
-import { CustomButton } from "@/components/button/custom-button";
-import { IconBold, IconPlayerEject, IconPlayerPlay } from "@tabler/icons";
-
-const CONTROLS = [
-  {
-    Comp: ChevronLeftIcon,
-  },
-  {
-    Comp: PlayIcon,
-  },
-  {
-    Comp: ChevronRightIcon,
-  },
-];
+import { IconPlayerEject, IconPlayerPlay } from "@tabler/icons";
 
 export const VideoFrame = () => {
   return (
