@@ -10,8 +10,6 @@ use tauri::{
 
 #[tauri::command]
 fn launch_exec() {
-    println!("Launching...");
-
     let ouput = Command::new("open")
         .arg("/Applications/Safari.app")
         .spawn()
