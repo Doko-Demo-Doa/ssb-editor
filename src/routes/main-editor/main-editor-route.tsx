@@ -19,7 +19,7 @@ import {
   IconStrikethrough,
   IconShadow,
   IconCheck,
-} from "@tabler/icons";
+} from "@tabler/icons-react";
 import { MainLayout } from "@/routes/main-layout";
 
 export const MainEditorRoute = () => {

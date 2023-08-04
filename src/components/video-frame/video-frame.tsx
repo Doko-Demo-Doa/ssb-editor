@@ -8,7 +8,7 @@ import {
   Select,
   Space,
 } from "@mantine/core";
-import { IconPlayerEject, IconPlayerPlay } from "@tabler/icons";
+import { IconPlayerEject, IconPlayerPlay } from "@tabler/icons-react";
 
 export const VideoFrame = () => {
   return (
